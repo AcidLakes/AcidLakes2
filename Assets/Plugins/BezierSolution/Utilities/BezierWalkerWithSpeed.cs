@@ -45,7 +45,7 @@ namespace BezierSolution
 
 		private void Update()
 		{
-            //Jumps
+            /*//Jumps
             rb = GetComponent<Rigidbody>();
             jump = new Vector3(0.0f, 2.0f, 0.0f);
 
@@ -58,10 +58,10 @@ namespace BezierSolution
                 isGrounded = false;
             }
             else
-            {
+            {*/
                 Execute(Time.deltaTime);
 
-            }
+            //}
         }
 
 		public override void Execute( float deltaTime )
@@ -88,6 +88,14 @@ namespace BezierSolution
 			else if( lookAt == LookAtMode.SplineExtraData)
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, spline.GetExtraData(m_normalizedT, InterpolateExtraDataAsQuaternion), rotationLerpModifier * deltaTime);
+            }
+            else
+            {
+                Debug.Log("in else");
+                Vector3 targetRotation = new Vector3(targetPos.x,
+                                        this.transform.position.y,
+                                        targetPos.z);
+                this.transform.LookAt(targetRotation);
             }
 
 
