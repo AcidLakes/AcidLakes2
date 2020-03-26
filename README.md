@@ -3,8 +3,8 @@ For our 3rd year professional practice in IT project we have created a 3D unity 
 
 ## Developers
 
-# Grace Keane
+### Grace Keane
 
-# Klaudija Medeksaite
+### Klaudija Medeksaite
 
-# Sherin Nagel
+### Sherin Nagel
