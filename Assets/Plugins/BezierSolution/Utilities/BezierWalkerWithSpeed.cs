@@ -13,7 +13,13 @@ namespace BezierSolution
 		[Range( 0f, 1f )]
 		private float m_normalizedT = 0f;
 
-		public override BezierSpline Spline { get { return spline; } }
+        public Vector3 jump;
+        public float jumpForce = 2.0f;
+
+        public bool isGrounded = true;
+        Rigidbody rb;
+
+        public override BezierSpline Spline { get { return spline; } }
         
         
 		public override float NormalizedT
@@ -39,8 +45,24 @@ namespace BezierSolution
 
 		private void Update()
 		{
-			Execute( Time.deltaTime );
-		}
+            /*//Jumps
+            rb = GetComponent<Rigidbody>();
+            jump = new Vector3(0.0f, 2.0f, 0.0f);
+
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            {
+                Debug.Log("Jump");
+                rb.velocity = Vector3.up * speed;
+
+                //rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+                isGrounded = false;
+            }
+            else
+            {*/
+                Execute(Time.deltaTime);
+
+            //}
+        }
 
 		public override void Execute( float deltaTime )
 		{
@@ -67,10 +89,17 @@ namespace BezierSolution
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, spline.GetExtraData(m_normalizedT, InterpolateExtraDataAsQuaternion), rotationLerpModifier * deltaTime);
             }
-				
-            
+            else
+            {
+                Debug.Log("in else");
+                Vector3 targetRotation = new Vector3(targetPos.x,
+                                        this.transform.position.y,
+                                        targetPos.z);
+                this.transform.LookAt(targetRotation);
+            }
 
-			if( movingForward )
+
+            if ( movingForward )
 			{
 				if( m_normalizedT >= 1f )
 				{
