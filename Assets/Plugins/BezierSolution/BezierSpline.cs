@@ -4,7 +4,7 @@ using UnityEngine;
 namespace BezierSolution
 {
 #if UNITY_EDITOR
-	public enum SplineAutoConstructMode { None = 0, Linear = 1, Smooth1 = 2, Smooth2 = 3 };
+	public enum SplineAutoConstructMode { None = 0, Linear = 0, Smooth1 = 10, Smooth2 = 9 };
 #endif
 
 	[ExecuteInEditMode]
