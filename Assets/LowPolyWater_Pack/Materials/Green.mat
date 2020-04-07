@@ -95,19 +95,7 @@ Material:
     - _Color: {r: 0.06808472, g: 0.9622642, b: 0.3136808, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-<<<<<<< Updated upstream
---- !u!114 &7273050244677642147
-=======
-<<<<<<< Updated upstream
---- !u!114 &5579306149391579871
-=======
-<<<<<<< HEAD
---- !u!114 &7273050244677642147
-=======
---- !u!114 &5579306149391579871
->>>>>>> d157931e26a484ecc0c276938dc0b035226e8d6b
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
