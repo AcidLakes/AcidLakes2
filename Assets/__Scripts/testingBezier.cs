@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -50,8 +50,6 @@ public class testingBezier : MonoBehaviour
 
             bool movingForward = MovingForward;
 
-            //Debug.Log("1 + isBottomSpline = " + isBottomSpline);
-
         }
         else //if mid-jump
         {
@@ -63,7 +61,6 @@ public class testingBezier : MonoBehaviour
             cachedTransform.position = Vector3.Lerp(cachedTransform.position, splineTop.GetPoint(progress), Time.deltaTime);
             bool movingForward = MovingForward;
 
-            //Debug.Log("2 + isBottomSpline = " + isBottomSpline);
 
             // The car is in the air for 0.1 of a second
             // if longer, land on ground
@@ -90,13 +87,13 @@ public class testingBezier : MonoBehaviour
         {
             isBottomSpline = false;
             cachedTransform.position = Vector3.Lerp(cachedTransform.position, splineTop.GetPoint(progress), Time.deltaTime);
-            //Debug.Log("3 + isBottomSpline = " + isBottomSpline);
+
         }
         else
         {
             isBottomSpline = true;
             cachedTransform.position = Vector3.Lerp(cachedTransform.position, splineBottom.GetPoint(progress), Time.deltaTime);
-            //Debug.Log("4 + isBottomSpline = " + isBottomSpline);
+
         }
     }
 }
